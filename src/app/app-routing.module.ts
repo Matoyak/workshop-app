@@ -4,8 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
+	{ path: '', pathMatch: 'full', redirectTo: 'dashboard' },
 	{
-		path: 'video',
+		path: 'dashboard',
 		loadChildren: () =>
 			import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
 	},
