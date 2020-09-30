@@ -6,6 +6,7 @@ import { VideoPlayerComponent } from './video-player/video-player.component';
 import { StatFiltersComponent } from './stat-filters/stat-filters.component';
 import { RouterModule } from '@angular/router';
 import { VideoDetailsComponent } from './video-details/video-details.component';
+import { VideoCardComponent } from './video-card/video-card.component';
 
 const dashboardRoutes = [
 	{ path: '', pathMatch: 'full', redirectTo: 'videoDashboard' },
@@ -19,6 +20,7 @@ const dashboardRoutes = [
 		VideoPlayerComponent,
 		StatFiltersComponent,
 		VideoDetailsComponent,
+		VideoCardComponent,
 	],
 	imports: [CommonModule, RouterModule.forChild(dashboardRoutes)],
 })

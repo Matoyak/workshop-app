@@ -1,6 +1,6 @@
 # WorkshopApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.8.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.8 and updated to 10.1.3.
 
 ## Development server
 

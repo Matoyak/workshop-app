@@ -1,0 +1,19 @@
+<div class="card blue-grey darken-1 row">
+	<div class="card-image waves-effect waves-block waves-light">
+		<img src="/assets/img/Slendy.gif" alt="PretendImg" class="activator" />
+	</div>
+	<div class="card-content">
+		<span class="card-title activator white-text"
+			>Title: {{ video.title }}
+		</span>
+		<p>Author: {{ video.author }}</p>
+		<p>ID: {{ video.id }}</p>
+	</div>
+	<div *ngFor="let details of video.viewDetails" class="card-reveal">
+		<span class="card-title red-text"
+			>Age: {{ details.age }}<i class="material-icons right">close</i>
+		</span>
+		<p>Location: {{ details.region }}</p>
+		<p>Date: {{ details.date | date: "mediumDate" }}</p>
+	</div>
+</div>
