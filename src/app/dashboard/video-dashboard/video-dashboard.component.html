@@ -1,5 +1,6 @@
 <wa-video-list
 	[videoList]="dashboardVideos"
+	[selectedVideo]="selectedVideo"
 	(selectVideo)="setVideo($event)"
 ></wa-video-list>
 <wa-video-player [selectedVideo]="selectedVideo"></wa-video-player>

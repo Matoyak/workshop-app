@@ -8,10 +8,10 @@ import { Video } from 'src/app/models';
 })
 export class VideoListComponent implements OnInit {
 	@Input() videoList: Video[];
+	@Input() selectedVideo: Video;
 	@Output() selectVideo = new EventEmitter<Video>();
 
 	showAsCards: boolean = false;
-	selectedVideo: Video = null;
 
 	constructor() {}
 
