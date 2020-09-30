@@ -19,7 +19,7 @@
 			<ul
 				class="row"
 				*ngFor="let video of videoList"
-				(click)="selectedVideo = video"
+				(click)="pickVideo(video)"
 				[class.highlight]="video === selectedVideo"
 			>
 				<wa-video-details [video]="video"></wa-video-details>

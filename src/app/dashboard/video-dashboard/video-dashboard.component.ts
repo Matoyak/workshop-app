@@ -10,7 +10,12 @@ import { Video } from 'src/app/models';
 })
 export class VideoDashboardComponent implements OnInit {
 	dashboardVideos: Video[] = dashboardData;
+	selectedVideo: Video | undefined;
 	constructor() {}
 
 	ngOnInit(): void {}
+
+	setVideo(video: Video): void {
+		this.selectedVideo = video;
+	}
 }
