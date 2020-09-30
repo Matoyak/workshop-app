@@ -35,15 +35,14 @@
 				</div>
 			</div>
 		</div>
-		<div class="col s12 m12 l3" *ngIf="!showAsCards">
+		<div class="col s12 m12 l6" *ngIf="!showAsCards">
 			<ul
 				class="row"
-				*ngFor="let video of videos"
+				*ngFor="let video of videoList"
 				(click)="selectedVideo = video"
 				[class.highlight]="video === selectedVideo"
 			>
-				<li>Author: {{ video.author }}</li>
-				<li>ID: {{ video.id }}</li>
+				<wa-video-details [video]="video"></wa-video-details>
 			</ul>
 		</div>
 	</div>
