@@ -10,6 +10,8 @@ import { RouterModule } from '@angular/router';
 import { VideoDetailsComponent } from './video-details/video-details.component';
 import { VideoCardComponent } from './video-card/video-card.component';
 
+// TODO: Make the ID of the selected video show in the query params
+// TODO: Make it possible to route directly to individual video based on ID (not via query params)
 const dashboardRoutes = [
 	{ path: '', pathMatch: 'full', redirectTo: 'videoDashboard' },
 	{ path: 'videoDashboard', component: VideoDashboardComponent },
