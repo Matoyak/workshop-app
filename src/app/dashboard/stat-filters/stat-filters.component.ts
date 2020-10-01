@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
 	selector: 'wa-stat-filters',
@@ -6,7 +7,24 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./stat-filters.component.scss'],
 })
 export class StatFiltersComponent implements OnInit {
-	constructor() {}
+	statFormGroup: FormGroup;
+
+	constructor(fb: FormBuilder) {
+		this.statFormGroup = fb.group({
+			name: ['Nathan', [Validators.required, Validators.minLength(2)]],
+			region: ['', Validators.required],
+		});
+		console.log(this.statFormGroup);
+	}
 
 	ngOnInit(): void {}
+
+	handleFormSubmit(form: FormGroup): void {
+		if (this.statFormGroup.valid) {
+			console.log('Submit form!');
+		} else {
+			console.log('Invalid Form');
+		}
+		console.log('form: ', this.statFormGroup);
+	}
 }

@@ -11,14 +11,14 @@
 	</div>
 	<div class="row">
 		<div class="col s12 m12 l3" *ngIf="showAsCards">
-			<div *ngFor="let video of videoList">
+			<div *ngFor="let video of videoList | async">
 				<wa-video-card [video]="video" class="row"></wa-video-card>
 			</div>
 		</div>
 		<div class="col s12 m12 l6" *ngIf="!showAsCards">
 			<ul
 				class="row"
-				*ngFor="let video of videoList"
+				*ngFor="let video of videoList | async"
 				(click)="pickVideo(video)"
 				[class.highlight]="video === selectedVideo"
 			>

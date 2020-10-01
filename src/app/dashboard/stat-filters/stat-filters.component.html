@@ -1,1 +1,17 @@
-<p>stat-filters works!</p>
+<div class="container">
+	<div class="row">
+		<form
+			[formGroup]="statFormGroup"
+			(ngSubmit)="handleFormSubmit($event)"
+			class="l3"
+		>
+			<label for="name">Video Name:</label>
+			<input type="text" name="name" id="name" formControlName="name" />
+			<br />
+			<label for="Region">Video Region:</label>
+			<input type="text" name="region" id="region" formControlName="region" />
+			<br />
+			<button type="submit" class="btn">Submit</button>
+		</form>
+	</div>
+</div>
