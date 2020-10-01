@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 
 import { Video } from 'src/app/models';
 import { VideoLoaderService } from 'src/app/services/video-loader.service';
@@ -11,6 +12,7 @@ import { VideoLoaderService } from 'src/app/services/video-loader.service';
 })
 export class VideoDashboardComponent implements OnInit {
 	dashboardVideos: Observable<Video[]>;
+	filteredVideos = new Subject<Video[]>();
 	selectedVideo: Video | undefined;
 
 	constructor(svc: VideoLoaderService) {
@@ -22,5 +24,20 @@ export class VideoDashboardComponent implements OnInit {
 
 	setVideo(video: Video): void {
 		this.selectedVideo = video;
+	}
+
+	handleFilter(name: string): void {
+		this.filteredVideos = this.dashboardVideos.pipe(
+			tap((videos) => console.log('BeforeMap', videos)),
+			map((videos) =>
+				videos.filter((video) =>
+					video?.title
+						?.trim()
+						?.toLowerCase()
+						?.includes(name?.trim()?.toLowerCase())
+				)
+			),
+			tap((videos) => console.log('AfterMap', videos))
+		);
 	}
 }

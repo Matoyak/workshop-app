@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
 	<div class="row">
 		<form
 			[formGroup]="statFormGroup"
@@ -13,5 +13,15 @@
 			<br />
 			<button type="submit" class="btn">Submit</button>
 		</form>
+	</div>
+</div> -->
+<div class="container">
+	<div class="row">
+		<div class="l3">
+			<h3>Filter Videos By Name</h3>
+			<input type="text" [formControl]="nameFilterControl" />
+
+			{{ controlValue$ | async }}
+		</div>
 	</div>
 </div>

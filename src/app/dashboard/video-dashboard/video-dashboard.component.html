@@ -1,7 +1,11 @@
+<wa-stat-filters (filterChange)="handleFilter($event)"> </wa-stat-filters>
 <wa-video-list
-	[videoList]="dashboardVideos"
+	[videoList]="filteredVideos | async"
 	[selectedVideo]="selectedVideo"
 	(selectVideo)="setVideo($event)"
 ></wa-video-list>
+
 <wa-video-player [selectedVideo]="selectedVideo"></wa-video-player>
-<wa-stat-filters></wa-stat-filters>
+<pre>
+	{{ selectedVideo | json }}
+</pre>

@@ -1,24 +1,24 @@
 <div class="container">
 	<div class="row">
 		<div class="col s12 m12 l3">
-			<button
+			<!-- <button
 				class="waves-effect waves-light btn"
 				(click)="showAsCards = !showAsCards"
 			>
 				{{ showAsCards ? "Change to List" : "Change to Cards" }}
-			</button>
+			</button> -->
 		</div>
 	</div>
 	<div class="row">
-		<div class="col s12 m12 l3" *ngIf="showAsCards">
-			<div *ngFor="let video of videoList | async">
+		<!-- <div class="col s12 m12 l3" *ngIf="showAsCards">
+			<div *ngFor="let video of videoList">
 				<wa-video-card [video]="video" class="row"></wa-video-card>
 			</div>
-		</div>
+		</div> -->
 		<div class="col s12 m12 l6" *ngIf="!showAsCards">
 			<ul
 				class="row"
-				*ngFor="let video of videoList | async"
+				*ngFor="let video of videoList"
 				(click)="pickVideo(video)"
 				[class.highlight]="video === selectedVideo"
 			>

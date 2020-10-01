@@ -13,10 +13,11 @@ export class VideoLoaderService {
 	constructor(private http: HttpClient) {}
 
 	loadVideos(): Observable<Video[]> {
-		return this.http.get<Video[]>(environment.apiUrl + '/videos').pipe(
-			tap({ next: (videos) => console.log('before map', videos) }),
-			map((videos) => videos.slice(0, 2)),
-			tap((videos) => console.log('after map', videos))
-		);
+		return this.http.get<Video[]>(environment.apiUrl + '/videos');
+		// .pipe(
+		// tap({ next: (videos) => console.log('before map', videos) }),
+		// map((videos) => videos.slice(0, 2)),
+		// tap((videos) => console.log('after map', videos))
+		// );
 	}
 }
