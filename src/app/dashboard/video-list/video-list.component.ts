@@ -20,4 +20,12 @@ export class VideoListComponent implements OnInit {
 	pickVideo(video: Video): void {
 		this.selectVideo.emit(video);
 	}
+
+	findVideo(name: string): Video | undefined {
+		return this.videoList.find((video) => video.title === name);
+	}
+
+	getTitles(): string[] {
+		return this.videoList.map((video) => video.title);
+	}
 }
